@@ -12,7 +12,7 @@ I am new to using MongoDB, and underestimated the amount of time it would take t
 As for assumptions, I am committing a huge security sin by having the access link to my MongoDB connection listed as a string literal within the `db/index.js` file. This was done in an effort to keep development moving, but normally I would keep this information saved to an environment variable instead.
 
 # Routes
-### POST http://localhost:3000/snippets/<name>
+### POST http://localhost:3000/snippets/:name
 The expected request body is as follows:
 ```
 {
@@ -23,8 +23,8 @@ The expected request body is as follows:
 
 ```
 
-### GET http://localhost:3000/snippets/<name>
+### GET http://localhost:3000/snippets/:name
 Will return a JSON message containing the snippet of <name>, if it can be found
 
-### POST http://localhost:3000/snippets/<name>/like
+### POST http://localhost:3000/snippets/:name/like
 Will return a JSON message containing the snippet of <name>, if it can be found, with the updated "likes" field
