@@ -7,7 +7,13 @@ router.get('/', (req, res, next) => {
     res.send({'message': 'hello world'}).status(200)
 })
 
-/* POST new snippet */
+/* POST new snippet 
+    expected request body: {
+        name: String
+        expires_at: Datetime
+        snippet: String
+    }
+*/
 router.post('/snippets/:name', (req, res, next) => {
     createNewSnippet(req, res, next)
 })
